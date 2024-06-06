@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
     let deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
 
-    game.update();
+    game.update(deltaTime);
     game.draw();
 
     // ctx.clearRect(0, 0, canvas.width, canvas.height);

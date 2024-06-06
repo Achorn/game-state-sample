@@ -6,7 +6,7 @@ export default class UserInput extends EventEmitter {
     this.commands = {};
     document.addEventListener("keydown", (e) => {
       this.commands[e.key.toLowerCase()] = true;
-      this.trigger("keyDown");
+      // this.trigger("keyDown");
       // create observer pattern to notify active menus!!
     });
     document.addEventListener("keyup", (e) => {
