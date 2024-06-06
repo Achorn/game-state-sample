@@ -7,7 +7,10 @@ export default class GameState {
   update(deltaTime, actions) {}
   render(canvas) {}
   enterState() {
-    if (this.game.stateStack > 1) {
+    console.log("entering state");
+    console.log(this.game.stateStack);
+    if (this.game.stateStack.length > 1) {
+      console.log("adding prev state");
       this.prevState = this.game.stateStack[this.game.stateStack.length - 1];
     }
     this.game.stateStack.push(this);

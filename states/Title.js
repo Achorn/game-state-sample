@@ -1,11 +1,15 @@
 import GameState from "./State.js";
-// import GameWorld from "./GameWorld.js";
+import GameWorld from "./GameWorld.js";
 
 export default class Title extends GameState {
   constructor(game) {
     super(game);
   }
-  update() {
+  update(deltaTime, actions) {
+    if (actions["enter"]) {
+      let newState = new GameWorld(this.game);
+      newState.enterState();
+    }
     this.game.resetKeys();
   }
   render(context) {

@@ -34,8 +34,6 @@ export default class Game {
     this.stateStack.push(this.titleScreen);
   }
   resetKeys() {
-    for (command in this.input.commands) {
-      this.input.commands[command] = false;
-    }
+    this.commands = {};
   }
 }

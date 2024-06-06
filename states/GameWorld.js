@@ -1,11 +1,17 @@
-import GameState from "./State";
+import GameState from "./State.js";
+import PauseMenu from "./PauseMenu.js";
 
 export default class GameWorld extends GameState {
   constructor(game) {
     super(game);
   }
 
-  update(deltaTime, actions) {}
+  update(deltaTime, actions) {
+    if (actions["escape"]) {
+      let newState = new PauseMenu(this.game);
+      newState.enterState();
+    }
+  }
 
   render(context) {
     //draw yellow background
@@ -21,5 +27,9 @@ export default class GameWorld extends GameState {
     context.lineTo(130, 130);
     context.closePath();
     context.fill();
+
+    context.font = "48px serif";
+    context.fillStyle = "green";
+    context.fillText("FUN GAMEPLAY", 50, 100);
   }
 }
