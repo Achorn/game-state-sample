@@ -31,5 +31,9 @@ export default class GameWorld extends GameState {
     context.font = "48px serif";
     context.fillStyle = "green";
     context.fillText("FUN GAMEPLAY", 50, 100);
+
+    context.font = "24px serif";
+    context.fillStyle = "blue";
+    context.fillText("press escape to pause", 100, 200);
   }
 }
