@@ -9,6 +9,11 @@ export default class PauseMenu extends GameState {
     if (actions["backspace"]) {
       this.exitState();
     }
+    if (actions["q"]) {
+      while (this.game.stateStack.length > 1) {
+        this.game.stateStack.pop();
+      }
+    }
     this.game.resetKeys();
   }
 
@@ -23,6 +28,9 @@ export default class PauseMenu extends GameState {
     context.fillText("pause menu", 100, 100);
     context.font = "30px serif";
     context.fillStyle = "yellow";
-    context.fillText("press delete to play", 100, 150);
+    context.fillText("press 'delete' to play", 100, 150);
+    context.font = "30px serif";
+    context.fillStyle = "yellow";
+    context.fillText("press 'q' to quit", 100, 200);
   }
 }
