@@ -11,6 +11,7 @@ export default class GameWorld extends GameState {
       let newState = new PauseMenu(this.game);
       newState.enterState();
     }
+    this.game.resetKeys();
   }
 
   render(context) {
